@@ -1,0 +1,39 @@
+<body>
+
+<div class="container">
+
+    <h1>🚀 AI LinkedIn Post Generator</h1>
+
+    <label>Topic / Achievement</label>
+
+    <textarea
+        id="topic"
+        rows="6"
+        placeholder="Example: Built an AI LinkedIn Post Generator using Flask and OpenAI">
+    </textarea>
+    <p id="counter">0 characters</p>
+
+    <label>Select Tone</label>
+
+    <select id="tone">
+        <option value="professional">Professional</option>
+        <option value="motivational">Motivational</option>
+        <option value="storytelling">Storytelling</option>
+    </select>
+
+    <button onclick="generatePost()">
+        Generate LinkedIn Post
+    </button>
+
+    <div class="loading" id="loading"></div>
+
+    <div class="result-box" id="result">
+        <button onclick="copyPost()">📋 Copy Post</button>
+        Your generated LinkedIn post will appear here...
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
