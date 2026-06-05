@@ -1,39 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI LinkedIn Post Generator</title>
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}">
+</head>
+
 <body>
 
-<div class="container">
+    <div class="container">
 
-    <h1>🚀 AI LinkedIn Post Generator</h1>
+        <div class="card">
 
-    <label>Topic / Achievement</label>
+            <h1>🚀 AI LinkedIn Post Generator</h1>
+            <p class="subtitle">
+                Create professional LinkedIn posts instantly using AI
+            </p>
 
-    <textarea
-        id="topic"
-        rows="6"
-        placeholder="Example: Built an AI LinkedIn Post Generator using Flask and OpenAI">
-    </textarea>
-    <p id="counter">0 characters</p>
+            <div class="form-group">
+                <label>Topic / Achievement</label>
 
-    <label>Select Tone</label>
+                <textarea
+                    id="topic"
+                    placeholder="Example: Built an AI LinkedIn Post Generator using Flask and OpenAI..."
+                ></textarea>
 
-    <select id="tone">
-        <option value="professional">Professional</option>
-        <option value="motivational">Motivational</option>
-        <option value="storytelling">Storytelling</option>
-    </select>
+                <small id="counter">0 characters</small>
+            </div>
 
-    <button onclick="generatePost()">
-        Generate LinkedIn Post
-    </button>
+            <div class="form-group">
+                <label>Select Tone</label>
 
-    <div class="loading" id="loading"></div>
+                <select id="tone">
+                    <option value="Professional">Professional</option>
+                    <option value="Inspirational">Inspirational</option>
+                    <option value="Casual">Casual</option>
+                    <option value="Storytelling">Storytelling</option>
+                </select>
+            </div>
 
-    <div class="result-box" id="result">
-        <button onclick="copyPost()">📋 Copy Post</button>
-        Your generated LinkedIn post will appear here...
+            <button onclick="generatePost()">
+                Generate Post
+            </button>
+
+            <div class="result-section">
+                <h2>Generated Post</h2>
+
+                <div id="result">
+                    Your generated LinkedIn post will appear here...
+                </div>
+
+                <button class="copy-btn" onclick="copyPost()">
+                    Copy Post
+                </button>
+            </div>
+
+        </div>
+
     </div>
 
-</div>
-
-<script src="script.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 
 </body>
+</html>

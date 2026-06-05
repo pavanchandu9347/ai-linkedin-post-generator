@@ -1,13 +1,19 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from ai_service import generate_linkedin_post
 from flask_cors import CORS
 
-app = Flask(__name__)
+app = Flask(
+    __name__,
+    template_folder="../templates",
+    static_folder="../static"
+)
+
 CORS(app)
 
 @app.route("/")
 def home():
-    return "AI LinkedIn Post Generator Backend Running!"
+    return render_template("index.html")
+
 @app.route("/generate-post", methods=["POST"])
 def generate_post():
 
@@ -21,7 +27,6 @@ def generate_post():
     return jsonify({
         "post": post
     })
-
 
 if __name__ == "__main__":
     app.run(debug=True)

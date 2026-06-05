@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI LinkedIn Post Generator</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <div class="sidebar">
+        <h2>📝 Recent Posts</h2>
+
+        <div id="recentPosts"></div>
+    </div>
+
+    <div class="main-card">
+
+        <button id="themeBtn" class="theme-btn">
+            🌙 Dark Mode
+        </button>
+
+        <h1>🚀 AI LinkedIn Post Generator</h1>
+        <p class="subtitle">
+            Create professional LinkedIn posts using AI
+        </p>
+
+        <label>Topic / Achievement</label>
+
+        <textarea
+            id="topic"
+            placeholder="Example: Built an AI LinkedIn Post Generator using Flask and OpenAI"
+        ></textarea>
+
+        <small id="counter">0 characters</small>
+
+        <label>Select Tone</label>
+
+        <select id="tone">
+            <option>Professional</option>
+            <option>Inspirational</option>
+            <option>Casual</option>
+            <option>Storytelling</option>
+        </select>
+
+        <button id="generateBtn" onclick="generatePost()">
+            ⚡ Generate Post
+        </button>
+
+        <div class="stats">
+            <span id="charCount">Characters: 0</span>
+            <span id="wordCount">Words: 0</span>
+        </div>
+
+        <div class="result-card">
+
+            <div class="profile">
+
+                <div class="avatar">👨‍💻</div>
+
+                <div>
+                    <h3>Pavan Chandu</h3>
+                    <p>AI & ML Student</p>
+                </div>
+
+            </div>
+
+            <div id="result">
+                Your generated post will appear here...
+            </div>
+
+        </div>
+
+        <div class="button-group">
+
+            <button class="copy-btn" onclick="copyPost()">
+                📋 Copy
+            </button>
+
+            <button class="download-btn" onclick="downloadPost()">
+                ⬇ Download
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
